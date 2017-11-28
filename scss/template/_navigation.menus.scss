@@ -1,0 +1,115 @@
+
+/* MENUS (FIRST LEVEL)
+=================================== */
+.nav-menu{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	line-height: normal;
+	font-size: 0;
+	
+	.navigation-portrait &{
+		width: 100%;
+	}
+	
+	// Centered menu
+	&.nav-menu-centered{
+		text-align: center;
+	}
+	// Menu items in centered menus
+	&.nav-menu-centered > li{
+		float: none;
+	}
+	
+	// Menu itens
+	> li{
+		display: inline-block;
+		float: left;
+		text-align: left;
+		
+		.navigation-portrait &{
+			width: 100%;
+			position: relative;
+			border-top: solid 1px $border-color;
+		}
+		.navigation-portrait &:last-child{
+			border-bottom: solid 1px $border-color;
+		}
+		.nav-menu + &:first-child{
+			border-top: none;
+		}
+		
+		// Menu links
+		> a{
+			height: 70px;
+			padding: 26px 15px;
+			display: inline-block;
+			position: relative;
+			text-decoration: none;
+			font-size: 14px;
+			font-weight: 500;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			color: $menu-item-font-color;
+			@include transition(color .3s, background .3s);
+			
+			.navigation-portrait &{
+				width: 100%;
+				height: auto;
+				padding: 12px 15px 12px 26px;
+				color: $font-color;
+			}
+		}
+		&:hover > a,
+		&.active > a,
+		&.focus > a{
+			color: $menu-item-font-color-hover;
+			
+			.navigation-portrait &{
+				color: $font-color-hover;
+			}
+		}
+		
+		// Menu item with icons and text
+		> a > i,
+		> a > [class*="ion-"]{
+			width: 18px;
+			height: 16px;
+			line-height: 16px;
+			@include transform(scale(1.4));
+		}
+		> a > [class*="ion-"]{
+			width: 16px;
+			display: inline-block;
+			@include transform(scale(1.8));
+		}
+	}
+	
+	// Menu item with social icons
+	.navigation-portrait &.nav-menu-social{
+		width: 100%;
+		text-align: center;
+	}
+	&.nav-menu-social{
+		> li{
+			text-align: center;
+			float: none;
+			border: none !important;
+			
+			.navigation-portrait &{
+				width: auto;
+			}
+			
+			> a > [class*="ion-"]{
+				font-size: 12px;
+			}
+			> a > .fa{
+				font-size: 14px;
+			}
+			.navigation-portrait & > a{
+				padding: 15px;
+			}
+		}
+	}
+
+}

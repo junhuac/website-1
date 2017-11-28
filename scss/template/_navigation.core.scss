@@ -1,0 +1,83 @@
+
+/* CORE STYLES */
+
+/* NAVIGATION
+=================================== */
+.navigation{
+	width: 100%;
+	height: 70px;
+	display: table;
+	position: relative;
+	font-family: inherit;
+	background-color: $navbar-background-color;
+	
+	*{
+		box-sizing: border-box;
+		-webkit-tap-highlight-color: transparent;
+	}
+}
+.navigation-portrait{
+	height: 48px;
+}
+
+/* Fixed navigation */
+.navigation-fixed-wrapper{
+	width: 100%;
+	left: 0;
+	z-index: 19998;
+	position: relative;
+	will-change: opacity;
+	@include transition(background .6s, padding .3s);
+	
+	&.fixed{
+		position: fixed !important;
+		-webkit-animation: fade .50s;
+		animation: fade .50s;
+	}
+	
+	@keyframes fade{
+		from { opacity: 0.999; }
+		to { opacity: 1; }
+	}
+	
+	.navigation{
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+/* Fixed navigation placeholder */
+.navigation-fixed-placeholder{
+	width: 100%;
+	display: none;
+	
+	&.navigation-fixed-placeholder.visible{
+		display: block;
+	}
+}
+
+/* Hidden navigation */
+.navigation-hidden{
+	width: 0 !important;
+	height: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	position: absolute;
+	top: -9999px;
+}
+
+/* RIGHT ALIGMENT FOR ELEMENTS
+=================================== */
+.align-to-right{
+	float: right;
+}
+
+/* NAVIGATION HEADER
+=================================== */
+.nav-header{
+	float: left;
+	
+	.navigation-hidden &{
+		display: none;
+	}
+}

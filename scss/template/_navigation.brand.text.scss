@@ -1,0 +1,21 @@
+
+/* BRAND TEXT
+=================================== */
+.nav-brand{  
+	line-height: 70px;
+	padding: 0;
+	color: $brand-font-color;
+	font-size: 24px;
+	font-family: 'Montserrat', sans-serif;
+	text-decoration: none !important;
+	
+	&:hover,
+	&:focus{
+		color: $brand-font-color;
+	}
+	
+	.navigation-portrait &{
+		font-size: 18px;
+		line-height: 48px;
+	}
+}

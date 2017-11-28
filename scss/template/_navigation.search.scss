@@ -1,0 +1,138 @@
+
+/* SEARCH PANEL 
+=================================== */
+.nav-search{
+	height: 70px;
+	float: right;
+	z-index: 19998;
+	
+	.navigation-portrait &{
+		height: 48px;
+		padding: 0 10px;
+		margin-right: 24px;
+	}
+	
+	// Search in hidden navigation 
+	.navigation-hidden &{
+		display: none;
+	}
+}
+
+/* Search button */
+.nav-search-button{
+	width: 70px;
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+	cursor: pointer;
+	background-color: $search-button-background-color;
+	
+	.navigation-portrait &{
+		width: 50px;
+		height: 48px;
+		line-height: 46px;
+		font-size: 22px;
+	}
+}
+
+/* Search icon */
+.nav-search-icon{
+	width: 14px;
+    height: 14px;
+	margin: 1px 8px 8px 4px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    color: $search-button-icon-color;
+    text-align: left;
+    text-indent: -9999px;
+	border: 2px solid;
+	border-radius: 50%;
+	@include transform(rotate(-45deg));
+	@include transition(color .3s);
+	
+	&:after, 
+	&:before {
+		content: '';
+		pointer-events: none;
+	}
+	&:before {
+		width: 2px;
+		height: 11px;
+		top: 11px;
+		position: absolute;
+		left: 50%;
+		border-radius: 0 0 1px 1px;
+		box-shadow: inset 0 0 0 32px;
+		@include transform(translateX(-50%));
+	}
+	.nav-search-button:hover &{
+		color: $search-button-icon-color-hover;
+	}
+}
+
+/* Form */
+.nav-search > form{
+	width: 100%;
+	height: 100%;
+	padding: 0 auto;
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	border-radius: 40px;
+	background-color: $search-panel-background-color;
+	z-index: 99;
+}
+.nav-search-inner{
+	width: 70%;
+	height: 70px;
+	margin: auto;
+	display: table;
+	
+	.navigation-portrait &{
+		height: 48px;
+	}
+	
+	input[type=text],
+	input[type=search]{
+		height: 70px;
+		width: 100%;
+		margin: 0;
+		padding: 0 12px;
+		font-size: 26px;
+		text-align: center;
+		color: $search-panel-font-color;
+		outline: none;
+		line-height: 70px;
+		border: none;
+		background-color: transparent;
+		@include transition(all .3s);
+	}
+	.navigation-portrait & input[type=text],
+	.navigation-portrait & input[type=search]{
+		height: 48px;
+		font-size: 18px;
+		line-height: 48px;
+	}
+}
+
+/* Close button for search form */
+.nav-search-close-button{
+	width: 28px;
+	height: 28px;
+	display: block;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	line-height: normal;
+	color: $search-panel-close-icon-color;
+	font-size: 20px;
+	cursor: pointer;
+	text-align: center;
+	
+	.navigation-portrait &{
+		top: 10px;
+		right: 14px;
+	}
+}

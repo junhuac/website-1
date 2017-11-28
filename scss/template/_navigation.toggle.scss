@@ -1,0 +1,28 @@
+
+/* TOGGLE BUTTON
+=================================== */
+.nav-toggle{
+	width: 30px;
+	height: 30px;
+	padding: 6px 2px 0;
+	position: absolute;
+	top: 50%;
+	margin-top: -14px;
+	right: 0;
+	display: none;
+	cursor: pointer;
+	
+	&:before{
+		content: "";
+		position: absolute;
+		width: 24px;
+		height: 2px;
+		background-color: $toggle-icon-color;
+		border-radius: 10px;
+		box-shadow: 0 0.50em 0 0 $toggle-icon-color, 0 1em 0 0 $toggle-icon-color;
+	}
+	
+	.navigation-portrait &{
+		display: block;
+	}
+}
